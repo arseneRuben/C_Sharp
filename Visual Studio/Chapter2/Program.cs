@@ -8,13 +8,15 @@ namespace Chapter2
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Question11();
+            /*Question11();
             Question12();
             Question13();
-            Question21();
-        }
+            Question21();*/
+            Chat.Question3();
+         }
         static void Question11()
         {
             double v1 = 54.130;
