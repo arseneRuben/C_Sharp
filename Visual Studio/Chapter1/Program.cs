@@ -11,7 +11,7 @@ namespace chapter1
         public const double PI = 3.1415926535897931;
         static void Main(string[] args)
         {
-            // Question1();
+             Question1();
             //Question2();
             //Question3();
         }
@@ -20,7 +20,7 @@ namespace chapter1
         {
             Console.Write("Please enter the radius of the circle: ");
             double r = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Hello,Eh, the perimeter of a circle of radius {0} is {1} and its area is {2}   !", r, 2 * PI * r, PI * Math.Pow(r, 2.0));
+            Console.WriteLine("Hello,Eh, the perimeter of a circle of radius {0} is {1} and its area is {2}   !",    r,  2 * PI * r, PI * Math.Pow(r, 2.0));
         }
 
         static void Question2()
