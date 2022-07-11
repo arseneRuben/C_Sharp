@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter3", "Chapter3\Chapte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chapter4", "chapter4\chapter4.csproj", "{069F02E3-6016-4926-AF5F-8F2C1089D5B8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chap1", "chap1", "{B81EF829-466E-4154-B19B-5F55AE97BAD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chap2", "chap2", "{03159CA8-AC32-46D5-A913-DDDB6CA8D323}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chap3", "chap3", "{8456221B-0A10-4E86-8F56-6B6F1A01001B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chap4", "chap4", "{CEF45A18-6842-4CB9-9FDF-F23CC4783CA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +50,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5FB42852-593C-4DBE-9369-E2455B694938} = {B81EF829-466E-4154-B19B-5F55AE97BAD7}
+		{8CD75D9B-ED21-42D5-8452-CF27F51817D7} = {03159CA8-AC32-46D5-A913-DDDB6CA8D323}
+		{010600F5-2978-49E4-8006-7D8A0C3101F8} = {8456221B-0A10-4E86-8F56-6B6F1A01001B}
+		{069F02E3-6016-4926-AF5F-8F2C1089D5B8} = {CEF45A18-6842-4CB9-9FDF-F23CC4783CA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CE65AA-3A46-4BE4-B7DF-FE920170FB2A}

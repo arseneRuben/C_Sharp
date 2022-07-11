@@ -11,7 +11,9 @@ namespace chapter4
         static void Main(string[] args)
         {
             //Question1();
-            Question2();
+            //Question2();
+           // Question3();
+            Question4();
         }
 
         static  int GetMax(int a, int b)
@@ -83,6 +85,44 @@ namespace chapter4
                     }
                 }
             } while (true);
+        }
+
+        static void Occurences( string  word, int  number, out int occurence )
+        {
+            occurence = 0;
+            foreach(char c in word)
+            {
+                if ((int)(c - '0')== number)
+                {
+                    occurence++;
+                }
+              //  Console.WriteLine((int)(c - '0'));
+            }
+           
+        }
+
+     
+
+        static void Question3()
+        {
+            int res;
+            Occurences("J'ai 30 ans et mon epouse 32 ans", 3, out res);
+            Console.WriteLine(res==2?"JUSTE":"FAUX");
+        }
+
+        static bool BiggerThanNeighbors(int[] tab, int cible)
+        {
+            if (cible == 0) return tab[cible] > tab[cible + 1];
+            if(cible == tab.Length-1) return tab[cible] > tab[cible - 1];
+            return tab[cible] > tab[cible + 1] && tab[cible] > tab[cible - 1];
+        }
+
+        static void Question4()
+        {
+
+            int[] array1 = new int[] { 1, 3, 5,10, 7, 9 };
+            Console.WriteLine(BiggerThanNeighbors(array1,3));
+
         }
     }
 }
