@@ -12,8 +12,9 @@ namespace chapter4
         {
             //Question1();
             //Question2();
-           // Question3();
-            Question4();
+            // Question3();
+            //Question4();
+            Question5();
         }
 
         static  int GetMax(int a, int b)
@@ -122,6 +123,73 @@ namespace chapter4
 
             int[] array1 = new int[] { 1, 3, 5,10, 7, 9 };
             Console.WriteLine(BiggerThanNeighbors(array1,3));
+
+        }
+
+        static void Question5()
+        {
+            int[] array1 = new int[] {  10, 7, 9 ,1, 3, -5, 2};
+            print(array1);
+            sort(array1);
+        }
+
+        /// <summary>
+        /// finds the index of largest element of the array from index p to the last
+        /// </summary>
+        /// <param name="tab">The array</param>
+        /// <param name="p">stating index</param>
+        /// <returns>index of largest</returns>
+        static int biggerElmt(in int[] tab,in int p)
+        {
+            int bigger = 0;
+            for(int i=0; i<=tab.Length-p-1; i++)
+            {
+                if (tab[i] > tab[bigger])
+                    bigger = i;
+            }
+            return bigger;
+        }
+        /// <summary>
+        /// sorts the array in ascending order by searching each time for the index of the largest element and swapping it with the last
+        /// </summary>
+        /// <param name="tab">array to sort</param>
+        /// <returns>array sorted</returns>
+        static int[] sort(int[] tab)
+        {
+            int max;
+            for (int i=0; i<tab.Length; i++)
+            {
+                max = biggerElmt(in tab, in i);
+                //Console.WriteLine("I= {0} , Max= {1} \n ",i,tab[max]);
+                permut(in tab, max, tab.Length - 1-i);
+                print(tab);
+            }
+            return tab;
+        }
+
+        static void print(int[] tab)
+        {
+            for (int i = 0; i < tab.Length; i++)
+            {
+                Console.Write(" {0} ", tab[i]);
+            }
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// swaps the values of the array tab positioned at indices a and b
+        /// </summary>
+        /// <param name="tab"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        static void permut(in int[] tab, int a, int b)
+        {
+            /*tab[a] = tab[a] + tab[b];
+            tab[b] = tab[a] - tab[b];
+            tab[a] = tab[a] - tab[b];*/
+            int temp = tab[a];
+            tab[a] = tab[b];
+            tab[b] = temp;
 
         }
     }

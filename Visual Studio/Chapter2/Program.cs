@@ -183,7 +183,7 @@ namespace Chapter2
         /// <param name="tab"></param>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        static void permut(int[] tab,int a, int b)
+        static void permut(in int[] tab,int a, int b)
         {
             tab[a] = tab[a] + tab[b];
             tab[b] = tab[a] - tab[b];
