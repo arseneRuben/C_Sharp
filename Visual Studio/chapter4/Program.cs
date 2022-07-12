@@ -128,9 +128,31 @@ namespace chapter4
 
         static void Question5()
         {
+            //Methode 1
+            Console.WriteLine("Methode 1\n");
             int[] array1 = new int[] {  10, 7, 9 ,1, 3, -5, 2};
             print(array1);
-            sort(array1);
+            sort1(array1);
+            //Methode 2
+            Console.WriteLine("Methode 2\n");
+            array1 = new int[] { 110, 7, 29, 1, 23, -5, 2 };
+            print(array1);
+            sort2(array1);
+        }
+        /// <summary>
+        /// copies the values of the array from the beginning to the penultimate element
+        /// </summary>
+        /// <param name="tab"></param>
+       
+        /// <returns></returns>
+        static int[] partialCopy(int[] tab)
+        {
+            int[] copy = new int[tab.Length - 1];
+            for (int j = 0; j < tab.Length -1; j++)
+            {
+                copy[j] = tab[j];
+            }
+            return copy;
         }
 
         /// <summary>
@@ -149,12 +171,29 @@ namespace chapter4
             }
             return bigger;
         }
+
+        /// <summary>
+        /// finds the index of largest element of the array
+        /// </summary>
+        /// <param name="tab">The array</param>
+        
+        /// <returns>index of largest</returns>
+        static int biggerElmt(in int[] tab)
+        {
+            int bigger = 0;
+            for (int i = 0; i <= tab.Length  - 1; i++)
+            {
+                if (tab[i] > tab[bigger])
+                    bigger = i;
+            }
+            return bigger;
+        }
         /// <summary>
         /// sorts the array in ascending order by searching each time for the index of the largest element and swapping it with the last
         /// </summary>
         /// <param name="tab">array to sort</param>
         /// <returns>array sorted</returns>
-        static int[] sort(int[] tab)
+        static int[] sort1(int[] tab)
         {
             int max;
             for (int i=0; i<tab.Length; i++)
@@ -165,6 +204,20 @@ namespace chapter4
                 print(tab);
             }
             return tab;
+        }
+
+        static int[] sort2(int[] tab)
+        {
+            int[] result = new int[tab.Length];
+            for (int i = 0; i < result.Length; i++)
+            {
+                int bigger = biggerElmt(tab);
+                result[result.Length - 1 - i] = tab[bigger];
+                permut(in tab, bigger, tab.Length - 1);
+                tab = partialCopy(tab);
+                print(result);
+            }          
+            return result;
         }
 
         static void print(int[] tab)
