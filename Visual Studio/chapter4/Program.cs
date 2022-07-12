@@ -8,13 +8,17 @@ namespace chapter4
 {
     class Program
     {
-        static void Main(string[] args)
+        private static  int[] array1 = new int[] { 1, 3, 5, 10, 7, 9 };
+        private static float[]  array2 = new float[] { -11.01f, 3.7f, 100.33f, 1.4f, 23, -5.09f, 2 };
+
+    static void Main(string[] args)
         {
             //Question1();
             //Question2();
             // Question3();
             //Question4();
-            Question5();
+            //Question5();
+            Question6();
         }
 
         static  int GetMax(int a, int b)
@@ -121,7 +125,6 @@ namespace chapter4
         static void Question4()
         {
 
-            int[] array1 = new int[] { 1, 3, 5,10, 7, 9 };
             Console.WriteLine(BiggerThanNeighbors(array1,3));
 
         }
@@ -130,13 +133,12 @@ namespace chapter4
         {
             //Methode 1
             Console.WriteLine("Methode 1\n");
-            int[] array1 = new int[] {  10, 7, 9 ,1, 3, -5, 2};
-            print(array1);
+            Print(array1);
             sort1(array1);
             //Methode 2
             Console.WriteLine("Methode 2\n");
-            array1 = new int[] { 110, 7, 29, 1, 23, -5, 2 };
-            print(array1);
+            array1 = new int[] { 1, 3, 5, 10, 7, 9 };
+            Print(array1);
             sort2(array1);
         }
         /// <summary>
@@ -200,8 +202,8 @@ namespace chapter4
             {
                 max = biggerElmt(in tab, in i);
                 //Console.WriteLine("I= {0} , Max= {1} \n ",i,tab[max]);
-                permut(in tab, max, tab.Length - 1-i);
-                print(tab);
+                Permut(in tab, max, tab.Length - 1-i);
+                Print(tab);
             }
             return tab;
         }
@@ -213,14 +215,14 @@ namespace chapter4
             {
                 int bigger = biggerElmt(tab);
                 result[result.Length - 1 - i] = tab[bigger];
-                permut(in tab, bigger, tab.Length - 1);
+                Permut(in tab, bigger, tab.Length - 1);
                 tab = partialCopy(tab);
-                print(result);
+                Print(result);
             }          
             return result;
         }
 
-        static void print(int[] tab)
+        static void Print(int[] tab)
         {
             for (int i = 0; i < tab.Length; i++)
             {
@@ -235,7 +237,7 @@ namespace chapter4
         /// <param name="tab"></param>
         /// <param name="a"></param>
         /// <param name="b"></param>
-        static void permut(in int[] tab, int a, int b)
+        static void Permut(in int[] tab, int a, int b)
         {
             /*tab[a] = tab[a] + tab[b];
             tab[b] = tab[a] - tab[b];
@@ -243,7 +245,26 @@ namespace chapter4
             int temp = tab[a];
             tab[a] = tab[b];
             tab[b] = temp;
+        }
 
+        static void MinMaxArray(float[] data, out float min, out float max)
+        {
+            min = data[0];
+            max = data[0];
+            foreach(int n in data)
+            {
+                if (max < n)
+                    max = n;
+                if (min > n)
+                    min = n;
+            }
+        }
+
+        static void Question6()
+        {
+            float min, max;
+            MinMaxArray(array2, out min,out max);
+            Console.WriteLine("Plus petit vaut {0:#.##} et le plus grand {1:#.##}", min, max);
         }
     }
 }
