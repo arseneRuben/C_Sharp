@@ -116,12 +116,14 @@ namespace chapter4
         }
 
         static bool BiggerThanNeighbors(int[] tab, int cible)
-        {
+        {   // Si on est au premier element, je retourne le resuleta de la comparaison avec le voisin droit
             if (cible == 0) return tab[cible] > tab[cible + 1];
-            if(cible == tab.Length-1) return tab[cible] > tab[cible - 1];
+            // Si on est au dernier element, je retourne le resuleta de la comparaison avec le voisin gauche
+            if (cible == tab.Length-1) return tab[cible] > tab[cible - 1];
+            // Dans tout autre cas, le retourne le resultat de la comparaison avec les deux voisins
             return tab[cible] > tab[cible + 1] && tab[cible] > tab[cible - 1];
         }
-
+        // Ici j'ai pas fais explicitement usage des IF ELSE, 
         static void Question4()
         {
 
@@ -266,5 +268,21 @@ namespace chapter4
             MinMaxArray(array2, out min,out max);
             Console.WriteLine("Plus petit vaut {0:#.##} et le plus grand {1:#.##}", min, max);
         }
+
+        static void Double(in int val, out int doubled)
+        {
+            doubled = val * 2;
+        }
+
+        static int Add(params int[] args  )
+        {
+            int sum = 0;
+            foreach (int n in args)
+            {
+                sum += n;
+            }
+            return sum;
+        }
     }
 }
+
