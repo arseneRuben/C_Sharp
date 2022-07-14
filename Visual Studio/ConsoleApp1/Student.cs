@@ -15,6 +15,7 @@ namespace ConsoleApp1
         private string email;
         private string telephone;
         private static int number = 0;
+        private int id;
         public Student(string fullName, string email, string tel)
         {
             this.fullName = fullName;
@@ -33,7 +34,8 @@ namespace ConsoleApp1
             this.subject = sub;
             this.course = course;
             this.university = univ;
-            Student.number++;
+            this.id = Student.number++;
+
         }
 
         public Student(string fullName, string email, string tel, string univ)
@@ -44,12 +46,12 @@ namespace ConsoleApp1
             this.subject = null;
             this.course = null;
             this.university = univ;
-            Student.number++;
+            this.id = Student.number++;
         }
         
         public void print()
         {
-            String result = "Eleve Num: " + number;
+            String result = "Eleve Num: " + id;
             result += !String.IsNullOrEmpty(this.fullName) ? " "+this.fullName : "";
             result += !String.IsNullOrEmpty(this.email) ? " " + this.email : "";
             result += !String.IsNullOrEmpty(this.telephone) ? " " + this.telephone : "";
@@ -59,13 +61,6 @@ namespace ConsoleApp1
              Console.WriteLine(result);
         }
 
-        public int getEffectif()
-        {
-            return Student.number;
-        }
-    }
-    class ModifiedStudent
-    {
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
@@ -73,39 +68,10 @@ namespace ConsoleApp1
         public string Course { get; set; }
         public string University { get; set; }
 
-        private static int number = 0;
-
-        public ModifiedStudent(string fullName, string email, string tel)
-        {
-            this.FullName = fullName;
-            this.Email = email;
-            this.Telephone = tel;
-            this.Subject = null;
-            this.Course = null;
-            this.University = null;
-            ModifiedStudent.number++;
-        }
-
-        public ModifiedStudent(string fullName, string email, string tel, string univ)
-        {
-            this.FullName = fullName;
-            this.Email = email;
-            this.Telephone = tel;
-            this.Subject = null;
-            this.Course = null;
-            this.University = univ;
-            ModifiedStudent.number++;
-        }
-
-        public void print()
-        {
-            Console.WriteLine("Nom Complet:{0}, Email:{1}, Contact:{2},\n , Sujet:{3}, Cours:{4}, Universite:{5}",
-                this.FullName, this.Email, this.Telephone, this.Subject, this.Course, this.University);
-        }
-
         public int getEffectif()
         {
-            return ModifiedStudent.number;
+            return Student.number;
         }
     }
+  
 }
