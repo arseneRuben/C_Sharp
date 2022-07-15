@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp1
 {
 
-    class StudentTest
+    class Test
     {
         private int id;
         private static Student major;
@@ -17,8 +17,8 @@ namespace ConsoleApp1
         }
         public static Student Major
         {
-            get { return StudentTest.major; }
-            set { StudentTest.major = value; }
+            get { return Test.major; }
+            set { Test.major = value; }
         }
         public static Student Second
         {
