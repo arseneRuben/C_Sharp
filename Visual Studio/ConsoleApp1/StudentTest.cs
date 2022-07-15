@@ -45,10 +45,10 @@ namespace ConsoleApp1
             biblio.Add(designPattern);
 
             Console.WriteLine("Capacity is {0}", biblio.Books.Capacity);
-            /*foreach(Book b in biblio.Books)
+           foreach(Book b in biblio.Books)
             {
                 b.Print();
-            }*/
+            }
 
         }
 

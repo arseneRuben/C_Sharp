@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     class Library
     {
-        private List<Book> books;
+       
         
         public String Name
         {
@@ -17,7 +17,7 @@ namespace ConsoleApp1
 
         public Library(List<Book> l)
         {
-            this.books = l;
+            this.Books = l;
         }
 
         public List<Book> Books
@@ -26,28 +26,25 @@ namespace ConsoleApp1
         }
         public Library(List<Book> l, string name)
         {
-            this.books = l;
+            this.Books = l;
             this.Name = name;
         }
 
         public void Add(Book b)
         {
-            books.Add(b);
+            Books.Add(b);
         }
 
         public void Remove(Book b)
         {
-            books.Remove(b);
+            Books.Remove(b);
         }
-        public void Delete(Book b)
-        {
-            books.Remove(b); 
-        }
+      
 
         public Book search(in string author)
         {
             Book found = null ;
-            foreach(Book b in books)
+            foreach(Book b in Books)
             {
                 if (b.Author == author)
                 {
