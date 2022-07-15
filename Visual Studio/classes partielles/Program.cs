@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace classes_partielles
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
-    }
+    
 
     partial class Employe
         {/// <summary>
