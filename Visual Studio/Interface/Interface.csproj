@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{65133634-F7E8-4561-B2F4-4E10DB3F2757}</ProjectGuid>
+    <ProjectGuid>{0DE116A0-ECA2-429C-A937-36B8486B80A1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Classes_Abstraites</RootNamespace>
-    <AssemblyName>Classes Abstraites</AssemblyName>
+    <RootNamespace>Interface</RootNamespace>
+    <AssemblyName>Interface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Employe.cs" />
-    <Compile Include="EmployeTest.cs" />
+    <Compile Include="ICodeChecker.cs" />
+    <Compile Include="IConvertible.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StorageDevice.cs" />
-    <Compile Include="USBDisk.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
