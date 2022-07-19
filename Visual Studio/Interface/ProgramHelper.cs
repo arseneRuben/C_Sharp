@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Interface
 {
     class ProgramHelper : ICodeChecker
-    {
+    {// Je dois conduire une reunion en ligne 
          string IConvertible.ConvertToCSharp(string code)
         {
             Console.WriteLine("Conversion du code en c#");

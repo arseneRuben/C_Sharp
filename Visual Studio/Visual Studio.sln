@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes Abstraites", "Class
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{0DE116A0-ECA2-429C-A937-36B8486B80A1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chap7", "chap7", "{BA996FD8-5360-4857-8AF4-AE1EA8EC93D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegate", "Delegate\Delegate.csproj", "{A242B17B-A115-4328-978D-7BC5938B7CBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,10 @@ Global
 		{0DE116A0-ECA2-429C-A937-36B8486B80A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE116A0-ECA2-429C-A937-36B8486B80A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE116A0-ECA2-429C-A937-36B8486B80A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A242B17B-A115-4328-978D-7BC5938B7CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A242B17B-A115-4328-978D-7BC5938B7CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A242B17B-A115-4328-978D-7BC5938B7CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A242B17B-A115-4328-978D-7BC5938B7CBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +110,7 @@ Global
 		{1698FEBE-A013-4050-BE27-B060C847F5EB} = {8BE7F9C2-38E8-49B9-B156-735230FE9FBA}
 		{65133634-F7E8-4561-B2F4-4E10DB3F2757} = {8BE7F9C2-38E8-49B9-B156-735230FE9FBA}
 		{0DE116A0-ECA2-429C-A937-36B8486B80A1} = {8BE7F9C2-38E8-49B9-B156-735230FE9FBA}
+		{A242B17B-A115-4328-978D-7BC5938B7CBD} = {BA996FD8-5360-4857-8AF4-AE1EA8EC93D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {40CE65AA-3A46-4BE4-B7DF-FE920170FB2A}
