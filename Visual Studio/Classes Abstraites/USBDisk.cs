@@ -43,14 +43,8 @@ namespace Classes_Abstraites
             device.Write();
         }
 
-        static void Main(string[] args)
-        {
-            Computer cp = new Computer();
-            USBDisk usb = new USBDisk();
-            SmartPhone sm = new SmartPhone();
-            cp.ReadData(usb);
-            cp.ReadData(sm);
-
-        }
+        
+           
+        
     }
 }

@@ -31,7 +31,6 @@ namespace Delegate
             yourDg.Invoke("Hdsff iun");
             yourDg += ho.SaySomething;
             yourDg("Wonderful");
-
         }
     }
 }

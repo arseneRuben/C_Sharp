@@ -8,9 +8,9 @@ namespace Classes_Abstraites
 {
     abstract class Employe
     {
-        protected string Name { get; set; }
-        protected string Adress { get; set; }
-        protected float BaseSalary { get; set; }
+        internal protected string Name { get; set; }
+        internal protected string Adress { get; set; }
+        internal protected float BaseSalary { get; set; }
 
         public static float fixedSal = 120;
         public Employe(string name, string ad, float sal)
@@ -42,7 +42,7 @@ namespace Classes_Abstraites
         { }
         public override float GetMonthlySalary()
         {
-            return  Employe.fixedSal+ 129;
+            return  Employe.fixedSal/12+ 12;
         }
 
     }
@@ -53,7 +53,7 @@ namespace Classes_Abstraites
         { }
         public override float GetMonthlySalary()
         {
-            return Employe.fixedSal + 80;
+            return Employe.fixedSal/12 + 8;
         }
 
     }
