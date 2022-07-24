@@ -73,8 +73,8 @@ namespace DictionnaryExo
         }
         static void Main(string[] args)
         {
-           // Question1();
-           // Question2();
+            Question1();
+            Question2();
             Question3();
         }
 
