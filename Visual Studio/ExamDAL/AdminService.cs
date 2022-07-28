@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ExamDAL
 {
-    public class AdminService : Service
+    public  class AdminService  : Service
     {
         public static Admin Login(string name, string password)
         {

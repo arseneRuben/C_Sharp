@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExamBLL;
+using ExamModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,23 @@ namespace ExamVIEW
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string name = this.name.Text;
+            string password = this.password.Password;
+
+            Admin adm = AdminManager.Login(name, password);
+           
+            if( adm != null)
+            {
+                new InsertStudentWindow();
+                this.Hide();
+            }else
+            {
+                MessageBox.Show("Erreur de login");
+            }
         }
     }
 }

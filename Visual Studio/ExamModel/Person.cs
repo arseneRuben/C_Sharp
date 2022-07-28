@@ -8,20 +8,27 @@ namespace ExamModel
 {
     public class Person
     {
-        public long Id { get; set; }
+        
+        public  long Id { get; set; }
         public string Name { get; set; }
         protected internal Person(long id, string name)
         {
             this.Id = id;
             this.Name = name; 
         }
+
+        protected internal Person(string name)
+        {
+            
+            this.Name = name;
+        }
     }
 
     public class Student : Person
     {
         public int Age { get; set; }
-        public DateTime Birthday { get; set; }
-        public Boolean InternationalStudent { get; set; }
+        public DateTime? Birthday { get; set; }
+        public Boolean? InternationalStudent { get; set; }
 
         public Student(long id, string name, int age, DateTime date, Boolean international):base(id, name)
         {
@@ -29,7 +36,35 @@ namespace ExamModel
             this.Birthday = date;
             this.InternationalStudent = international;
         }
-        
+
+        public Student( string name, int age, DateTime date, Boolean international) : base( name)
+        {
+            this.Age = age;
+            this.Birthday = date;
+            this.InternationalStudent = international;
+        }
+
+        public Student(long id, string name, int age) : base(id, name)
+        {
+            this.Age = age;
+            this.Birthday = null;
+            this.InternationalStudent = null;
+        }
+        public Student(long id, string name, int age, DateTime date) : base(id, name)
+        {
+            this.Age = age;
+            this.Birthday = date;
+            this.InternationalStudent = null;
+        }
+
+
+        public Student(long id, string name, int age,  Boolean international) : base(id, name)
+        {
+            this.Age = age;
+            this.Birthday = null;
+            this.InternationalStudent = international;
+        }
+
     }
 
     public class Admin : Person

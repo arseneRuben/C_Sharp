@@ -17,7 +17,7 @@ namespace Evenement_TeacherSick
             this.Sickness = sickness;
            
         }
-        []
+        
         public virtual void SicknessOccurs(object sender, TeacherSick e)
         {
            // TeacherSick teacher = (TeacherSick)e;

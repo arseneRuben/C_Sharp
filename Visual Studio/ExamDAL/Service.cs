@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace ExamDAL
 {
-    public class Service
+    public  class Service
     {
         private static string machine = Environment.MachineName;
 

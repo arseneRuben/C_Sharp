@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ExamDAL
 {
-    class StudentService: Service
+    public class StudentService: Service
     {
         public static int Add(Student std)
         {
@@ -84,11 +84,11 @@ namespace ExamDAL
 
         }
 
-        public static void VerifieSiNomDejaPris(string name)
+        public static bool VerifieSiNomDejaPris(string name)
         {
             Dictionary<string, string> critere = new Dictionary<string, string>();
             critere.Add("name", name);
-            Console.WriteLine((FindBy(critere)).Count);
+           return (FindBy(critere)).Count >=1;
         }
 
         public static void Main(string[] args)
