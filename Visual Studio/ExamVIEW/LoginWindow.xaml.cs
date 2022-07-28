@@ -33,15 +33,17 @@ namespace ExamVIEW
             string password = this.password.Password;
 
             Admin adm = AdminManager.Login(name, password);
-           
-            if( adm != null)
-            {
-                new InsertStudentWindow();
-                this.Hide();
-            }else
-            {
-                MessageBox.Show("Erreur de login");
-            }
+
+             if ( adm != null)
+             {
+                   //MessageBox.Show(adm+"");
+                InsertStudentWindow insert = new InsertStudentWindow();
+                insert.Show();
+                 this.Hide();
+             }else
+             {
+                 MessageBox.Show("Erreur de login");
+             }
         }
     }
 }
