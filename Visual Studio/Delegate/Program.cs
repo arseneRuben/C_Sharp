@@ -26,7 +26,8 @@ namespace Delegate
         static void Main(string[] args)
         {
             Chinese ho = new Chinese();
-            DGSaySomething yourDg = new DGSaySomething(ho.SaySomething);
+            Person po = new Person();
+            DGSaySomething yourDg = new DGSaySomething(po.SaySomething);
             yourDg("Hdsff iun");
             yourDg.Invoke("Hdsff iun");
             yourDg += ho.SaySomething;
