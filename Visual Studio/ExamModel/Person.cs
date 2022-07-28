@@ -8,8 +8,13 @@ namespace ExamModel
 {
     public class Person
     {
-        protected int Id { get; set; }
+        protected long Id { get; set; }
         protected string Name { get; set; }
+        protected internal Person(long id, string name)
+        {
+            this.Id = id;
+            this.Name = name; 
+        }
     }
 
     public class Student : Person
@@ -18,10 +23,27 @@ namespace ExamModel
         public DateTime Birthday { get; set; }
         public bool InternationalStudent { get; set; }
 
+        public Student(long id, string name, int age, DateTime date, bool international):base(id, name)
+        {
+            this.Age = age;
+            this.Birthday = date;
+            this.InternationalStudent = international;
+        }
+        
     }
 
     public class Admin : Person
     {
         public string Password { get; set; }
+
+        public Admin(long id, string name, string pwd):base(id, name)
+        {
+            this.Password = pwd;
+        }
+
+        public override string ToString()
+        {
+            return "Id = " + Id + " " + Name + " " + Password;
+        }
     }
 }
