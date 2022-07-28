@@ -14,8 +14,8 @@ namespace ExamDAL
         public static Admin Login(string name, string password)
         {
             Admin output = null;
-            string ConString = connectionString;
-            using (SqlConnection connection = new SqlConnection(ConString))
+            
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string request = "SELECT * FROM T_Admin WHERE name=@login AND password=@password";
     
@@ -50,10 +50,6 @@ namespace ExamDAL
             return output;
         }
 
-        public static void Main(string[] args)
-        {
-            Admin ad = Login("Tom", "123456");
-            Console.WriteLine(ad) ;
-        }
+       
     }
 }

@@ -8,8 +8,8 @@ namespace ExamModel
 {
     public class Person
     {
-        protected long Id { get; set; }
-        protected string Name { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
         protected internal Person(long id, string name)
         {
             this.Id = id;
@@ -21,9 +21,9 @@ namespace ExamModel
     {
         public int Age { get; set; }
         public DateTime Birthday { get; set; }
-        public bool InternationalStudent { get; set; }
+        public Boolean InternationalStudent { get; set; }
 
-        public Student(long id, string name, int age, DateTime date, bool international):base(id, name)
+        public Student(long id, string name, int age, DateTime date, Boolean international):base(id, name)
         {
             this.Age = age;
             this.Birthday = date;
