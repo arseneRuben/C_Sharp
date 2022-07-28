@@ -49,10 +49,53 @@ namespace ExamDAL
             return output;
         }
 
+        public static List<Student> FindBy(in Dictionary<string, string> criteria)
+        {
+            List<Student> output = new List<Student>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string request = "SELECT * FROM T_Student WHERE ";
+                foreach (string key in criteria.Keys)
+                {
+                    request += key + " = '" + criteria[key] + "' AND ";
+                }
+                request = request.Remove(request.Length - 4, 4);
+                SqlCommand command = new SqlCommand(request, connection);
+                connection.Open();
+                SqlDataReader sdr = command.ExecuteReader();
+                while (sdr.Read())
+                {
+                    // Displaying Record  
+                    output.Add(new Student(
+                                                (long)sdr["id"],
+                                             (String)sdr["name"],
+                                             (int)sdr["age"],
+                                             Convert.ToDateTime(sdr["birthday"]),
+                                             Convert.ToBoolean(sdr["isInternationalStudent"]))
+
+                                        );
+
+                }
+            }
+
+            return output;
+
+
+        }
+
+        public static void VerifieSiNomDejaPris(string name)
+        {
+            Dictionary<string, string> critere = new Dictionary<string, string>();
+            critere.Add("name", name);
+            Console.WriteLine((FindBy(critere)).Count);
+        }
+
         public static void Main(string[] args)
         {
-            Student std = new Student(100, "Samsung", 12, DateTime.Now, false);
-            Console.WriteLine(Add(std));
+           
+            VerifieSiNomDejaPris("Alfred");
+            VerifieSiNomDejaPris("Samsung");
         }
     }
 }

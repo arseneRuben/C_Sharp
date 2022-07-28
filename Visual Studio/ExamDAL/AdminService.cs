@@ -40,9 +40,7 @@ namespace ExamDAL
                                              Convert.ToString(sdr["name"]),
                                             Convert.ToString(sdr["password"])
                                         );
-                   /* Console.WriteLine((long)sdr["id"]);
-                    Console.WriteLine(sdr["name"]);
-                    Console.WriteLine(sdr["password"]);*/
+                  
 
                 }
             }
@@ -50,6 +48,6 @@ namespace ExamDAL
             return output;
         }
 
-       
+      
     }
 }
